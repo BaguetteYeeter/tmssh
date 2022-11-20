@@ -6,6 +6,7 @@ function perms {
 }
 
 curl -o /usr/local/bin/tmssh https://github.com/BaguetteYeeter/tmssh/raw/master/tmssh || perms
+chmod +x /usr/local/bin/tmssh
 
 curl -o $HOME/.ssh/tmssh.py https://github.com/BaguetteYeeter/tmssh/raw/master/tmssh.py
 if [[ -f "$HOME/.ssh/tmssh_hosts" ]]; then
