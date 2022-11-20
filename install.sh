@@ -8,7 +8,7 @@ function perms {
 curl -o /usr/local/bin/tmssh https://github.com/BaguetteYeeter/tmssh/raw/master/tmssh || perms
 
 curl -o $HOME/.ssh/tmssh.py https://github.com/BaguetteYeeter/tmssh/raw/master/tmssh.py
-if [[ -f "$HOME/.ssh/tmssh_hosts"]]; then
+if [[ -f "$HOME/.ssh/tmssh_hosts" ]]; then
     echo "Hosts file exists, not overwriting"
 else
     curl -o $HOME/.ssh/tmssh_hosts https://github.com/BaguetteYeeter/tmssh/raw/master/tmssh_hosts
