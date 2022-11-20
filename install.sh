@@ -5,14 +5,15 @@ function perms {
     exit 1
 }
 
-curl -o /usr/local/bin/tmssh https://github.com/BaguetteYeeter/tmssh/raw/master/tmssh || perms
+curl -fL -o /usr/local/bin/tmssh https://github.com/BaguetteYeeter/tmssh/raw/master/tmssh || perms
 chmod +x /usr/local/bin/tmssh
 
-curl -o $HOME/.ssh/tmssh.py https://github.com/BaguetteYeeter/tmssh/raw/master/tmssh.py
+curl -fL -o $HOME/.ssh/tmssh.py https://github.com/BaguetteYeeter/tmssh/raw/master/tmssh.py
+
 if [[ -f "$HOME/.ssh/tmssh_hosts" ]]; then
     echo "Hosts file exists, not overwriting"
 else
-    curl -o $HOME/.ssh/tmssh_hosts https://github.com/BaguetteYeeter/tmssh/raw/master/tmssh_hosts
+    curl -fL -o $HOME/.ssh/tmssh_hosts https://github.com/BaguetteYeeter/tmssh/raw/master/tmssh_hosts
 
 echo "TMSSH Installed"
 exit 0
