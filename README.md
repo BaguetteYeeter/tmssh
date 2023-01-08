@@ -4,11 +4,9 @@ TMSSH is an ssh manager. It was written in Python3.
 
 ## Installation
 
-Run `/bin/bash -c "$(curl -fsSL https://github.com/BaguetteYeeter/tmssh/raw/master/install.sh)"`
+Clone the git repo, cd into it, and run `bash install.sh`.
 
-This program requires Python3 to be installed under `python3`. On most unix distros, this should already be installed
-
-Note: You might need to run the installer as root
+TMSSH requires `python3` installed.
 
 ## Usage
 

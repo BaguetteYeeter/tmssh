@@ -1,7 +1,6 @@
 import pickle
 import os
 from getpass import getpass
-import readline
 
 class Host:
     def __init__(self, server="voidtm.tk", user="egg", password="a", key=False):
