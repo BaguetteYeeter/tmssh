@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tmssh"
+version = "0.2"
+authors = [
+    {name="Baguette Yeeter", email="baguetteyeeter@icloud.com"},
+]
+description = "Simple SSH Manager"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+    "Topic :: Terminals",
+    "Topic :: System :: Shells"
+]
+keywords = ["ssh", "terminal", "networking", "openssh"]
+
+[project.urls]
+"Homepage" = "https://github.com/BaguetteYeeter/tmssh"
+"Bug Tracker" = "https://github.com/BaguetteYeeter/tmssh/issues"
+
+[project.scripts]
+tmssh = "tmssh.tmssh:main"
