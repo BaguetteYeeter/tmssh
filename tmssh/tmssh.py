@@ -19,7 +19,14 @@ def main():
 
     while True:
         for i, k in enumerate(hosts):
-            print(f"{i+1}: {k}")
+            host = k.split(" ")[0]
+
+            if " (" in k:
+                comment = f"({k.split(" (")[-1]}"
+            else:
+                comment = ""
+
+            print(f"{i+1}: {host} {comment}")
 
         try:
             cmd = input("\033[0;32mType a command>\033[0m ")
@@ -37,33 +44,43 @@ def main():
                 print("ERROR: number not found in hosts")
                 continue
             else:
-                os.system(f"ssh {host}")
+                try:
+                    nocomment = host.split(" (")[0]
+                except Exception:
+                    nocomment = host
+                os.system(f"ssh {nocomment}")
                 print("\033[0;34m--TMSSH--\033[0m")
 
         if cmd == "q":
             break
+
         if cmd == "a":
             try:
                 host = input("username@server> ")
+                comment = input("Comment (optional)> ")
             except Exception:
                 print()
                 continue
             except KeyboardInterrupt:
                 print()
                 continue
-            hosts.append(host)
+
+            if comment:
+                hosts.append(f"{host} ({comment})")
+            else:
+                hosts.append(f"{host}")
+
             f = open(filename, "w")
             f.write("\n".join(hosts))
             f.close()
             print("\033[0;34m--TMSSH--\033[0m")
+
         if cmd == "r":
             num = input("Host to remove? ")
             if num.isdigit():
-                del hosts[int(num)-1]
-            else:
                 try:
-                    hosts.remove(num)
-                except ValueError:
+                    del hosts[int(num)-1]
+                except (IndexError, ValueError):
                     print("Host not found")
                     continue
             f = open(filename, "w")

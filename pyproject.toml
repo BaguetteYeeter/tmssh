@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tmssh"
-version = "0.2"
+version = "0.3b1"
 authors = [
     {name="Baguette Yeeter", email="baguetteyeeter@icloud.com"},
 ]
